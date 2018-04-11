@@ -14,19 +14,10 @@ const login = mongoose.model("users",LoginSchema);
 
 router.post('/api/capital/login', (req, res, next) => {
   console.log(req.body);
-
-    let loginSave =  new login ()
-    loginSave.save((err,res) => {
-      if(err) {
-        return err
-      } else {
-        console.log(res);
-      }
-    })
   login.find({'userName':req.body.userName},(err, data) => {
     if (err) return handleRrror(err)
 
-    if (data[0]) {
+    if (data[0] && data[0].userName === req.body.userName && data[0].phone === req.body.phone) {
       res.json(pubSu(data[0]))
     } else {
       res.json({
