@@ -10,23 +10,19 @@ var LoginSchema = new Schema({
   avator:{stype:String},
 });
 
-const login = mongoose.model("movies",LoginSchema);
+const login = mongoose.model("users",LoginSchema);
 
 router.post('/api/capital/login', (req, res, next) => {
   console.log(req.body);
 
-    // let loginSave =  new login ({
-    //           "userName":"admin",
-    //           "phone":"15278787878",
-    //           "avator":"http://up.qqjia.com/z/face01/face06/facejunyong/junyong27.jpg",
-    //         })
-    // loginSave.save((err,res) => {
-    //   if(err) {
-    //     return err
-    //   } else {
-    //     console.log(res);
-    //   }
-    // })
+    let loginSave =  new login ()
+    loginSave.save((err,res) => {
+      if(err) {
+        return err
+      } else {
+        console.log(res);
+      }
+    })
   login.find({'userName':req.body.userName},(err, data) => {
     if (err) return handleRrror(err)
 
