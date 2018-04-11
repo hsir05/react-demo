@@ -30,11 +30,10 @@ class loginForm extends Component {
     requestData('/login','POST',value)
     .then(res => {
       console.log(res.data)
-      return false
-      // if (res.data.status === 0) {
-      //   sessionStorage.setItem('user',JSON.stringify(res.data.result))
-      //   this.props.history.push('/login')
-      // }
+      if (res.data.status === 0) {
+        sessionStorage.setItem('user',JSON.stringify(res.data.result))
+        this.props.history.push('/')
+      }
     }).catch(err => {
       console.log(err);
     })

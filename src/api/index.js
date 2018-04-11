@@ -13,11 +13,7 @@ export function requestData(url,method,data) {
         responseType: 'json', //返回数据类型// default
         withCredentials:true
     }).then(response => {
-      if (!sessionStorage.getItem('user')) {
-        window.location = '/'
-      } else {
         return response
-      }
     }).catch(err => {
       throw err
     });
