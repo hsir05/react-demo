@@ -29,8 +29,8 @@ class loginForm extends Component {
   login (value) {
     requestData('/login','POST',value)
     .then(res => {
-      console.log(res.data)
       if (res.data.status === 0) {
+        console.log(res);
         sessionStorage.setItem('user',JSON.stringify(res.data.result))
         this.props.history.push('/')
       }

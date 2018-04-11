@@ -5,6 +5,16 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+const mongoose = require('mongoose')
+const DB_URL = 'mongodb://localhost:27017/mongoosetest'
+mongoose.connect(DB_URL)
+mongoose.connection.on('connected', () => {
+  console.log('success:'+ DB_URL)
+})
+mongoose.connection.on('error', (err) => {
+  console.log('err:'+ err)
+})
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 const login = require('./routes/login')
