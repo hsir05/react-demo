@@ -97,5 +97,6 @@
   },
   "devDependencies": {
     "chalk": "^1.1.3"
-  }
+  },
+  "proxy": "http://localhost:8085"
 }

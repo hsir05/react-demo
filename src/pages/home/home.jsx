@@ -57,7 +57,7 @@ export default class Home extends Component {
   }
 
   componentDidMount () {
-    this.init()
+    // this.init()
   }
 
   init () {

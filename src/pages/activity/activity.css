@@ -1,0 +1,15 @@
+.activity{
+  padding: 0;
+  margin: 0;
+  overflow: scroll;
+}
+.activity li{
+  padding: 0;
+  margin: 0;
+  width:100%;
+  list-style: none;
+}
+.activity li img {
+  height:auto;
+  width: 100%;
+}

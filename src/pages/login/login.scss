@@ -1,3 +1,16 @@
 .login{
-
+  position: absolute;
+  left: 50%;
+  top: 50%;
+   width: 400px;
+   margin-left: -200px;
+   box-sizing: border-box;
+   transform: translateY(-60%);
+   padding:30px;
+   border:1px solid silver;
+   border-radius: 10px;
+   box-shadow: 5px 5px 5px 0 #e5e5e5;
+   .ant-btn{
+     width: 100%;
+   }
 }
